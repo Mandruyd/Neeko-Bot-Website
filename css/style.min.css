@@ -5,6 +5,10 @@
 	box-sizing: border-box
 }
 
+[hidden] {
+	display: none !important;
+}
+
 body {
 	background-color: #17181b;
 	font-family: Arial, Helvetica, sans-serif;
@@ -81,12 +85,12 @@ a:hover {
 	margin-bottom: 50px
 }
 
-.cmds-list #list-here {
+.cmds-list #list {
 	width: 70%;
 	margin: auto
 }
 
-.cmds-list #list-here .cmd {
+.cmds-list #list .cmd {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	background-color: #24252a;
@@ -102,14 +106,14 @@ a:hover {
 	padding: 15px 18px
 }
 
-.cmds-list #list-here .cmd-title {
+.cmds-list #list .cmd-title {
 	text-align: left;
 	padding-right: 3px;
 	font-size: 15px;
 	font-weight: 600
 }
 
-.cmds-list #list-here .cmd-info {
+.cmds-list #list .cmd-info {
 	text-align: left;
 	color: #a19d9d;
 	font-size: 15px;
@@ -856,7 +860,7 @@ footer .txs a {
 		margin-bottom: 100px;
 		text-align: center
 	}
-	.cmds-list #list-here {
+	.cmds-list #list {
 		width: 100%;
 		margin: auto
 	}
