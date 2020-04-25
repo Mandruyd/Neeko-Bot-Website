@@ -26,7 +26,7 @@ mobClose.addEventListener('click', () => mobMenu.style.display = 'none');
         addCategory(category);
 
         commands[category].forEach(command => {
-            addCommand(category, Object.keys(command)[0], Object.values(command));
+            addCommand(category, Object.keys(command)[0], Object.values(command)[0]);
         });
     }
 
