@@ -31,7 +31,15 @@ body {
 	-ms-grid-rows: (minmax(100px, auto))[3];
 	grid-template-rows: repeat(3, minmax(100px, auto))
 }
-
+.cmd {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap !important;
+	text-align:left !important;
+}
+.cmd-title{
+	width:100%;
+}
 ul {
 	list-style: none
 }
@@ -864,4 +872,28 @@ footer .txs a {
 		width: 100%;
 		margin: auto
 	}
+}
+
+.collapsible:hover {
+	cursor: pointer;
+	background-color: #343638 !important;
+}
+
+.collapsible .cmd-info::after {
+	content: " (Click to show more)";
+}
+
+.active .cmd-info::after {
+	content: " (Click to show less)";
+}
+
+.long-desc {
+	overflow: hidden;
+	display: none;
+    margin: 0;
+	padding: 0;
+}
+
+.active .long-desc {
+	display: block;
 }

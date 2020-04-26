@@ -26,7 +26,7 @@ mobClose.addEventListener('click', () => mobMenu.style.display = 'none');
         addCategory(category);
 
         commands[category].forEach(command => {
-            addCommand(category, Object.keys(command)[0], Object.values(command)[0]);
+            addCommand(category, Object.keys(command)[0], Object.values(command)[0], command.long_desc);
         });
     }
 
@@ -46,7 +46,7 @@ mobClose.addEventListener('click', () => mobMenu.style.display = 'none');
         })
     }
 
-    function addCommand(category, name, info) {
+    function addCommand(category, name, info, longDesc) {
         const commandEl = document.createElement('div');
         commandEl.classList.add('cmd');
         commandEl.classList.add(category)
@@ -59,17 +59,33 @@ mobClose.addEventListener('click', () => mobMenu.style.display = 'none');
         infoEl.classList.add('cmd-info');
         infoEl.innerText = info;
 
-        commandEl.append(titleEl, infoEl);
+        let longDescEl;
+
+        if (longDesc) {
+            commandEl.classList.add('collapsible');
+
+            longDescEl = document.createElement('p');
+            longDescEl.classList.add('long-desc');
+            longDescEl.innerText = longDesc;
+        }
+
+        commandEl.append(titleEl, infoEl, document.createElement('br'), longDescEl ? longDescEl : '');
 
         const el = listEl.appendChild(commandEl);
 
         cmdsArray.push(el)
     }
 
+    document.querySelectorAll('.collapsible').forEach(collapsible => {
+        collapsible.addEventListener('click', () => {
+            collapsible.classList.toggle('active');
+        })
+    })
+
     allEl.addEventListener('click', () => {
-            cmdsArray.forEach(cmd => {
-                cmd.hidden = false;
-            })
-        });
+        cmdsArray.forEach(cmd => {
+            cmd.hidden = false;
+        })
+    });
 
 })();
