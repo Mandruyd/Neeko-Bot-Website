@@ -39,6 +39,7 @@ body {
 }
 .cmd-title{
 	width:100%;
+	text-shadow: 2px 2px 4px #000000;
 }
 ul {
 	list-style: none
@@ -57,9 +58,9 @@ a:hover {
 .btn {
 	padding: 7px 20px;
 	border-radius: 5px;
-	color: coral;
+	color: #a9d4c8;
 	background-color: transparent;
-	border-color: coral;
+	border-color: #a9d4c8;
 	outline: none;
 	cursor: pointer
 }
@@ -807,7 +808,7 @@ footer .txs a {
 		cursor: pointer
 	}
 	#mob:hover {
-		color: coral
+		color: #a9d4c8
 	}
 	#mob span {
 		margin-top: 10px
@@ -827,7 +828,7 @@ footer .txs a {
 	}
 	#mob-menu .fa-times:hover {
 		cursor: pointer;
-		color: coral
+		color: #a9d4c8
 	}
 	#mob-menu ul li,
 	#mob-menu ul a {
@@ -835,7 +836,7 @@ footer .txs a {
 		font-size: 22px
 	}
 	#mob-menu ul a:hover {
-		color: coral
+		color: #a9d4c8
 	}
 	#mob-menu ul span {
 		padding-right: 3px
@@ -892,6 +893,7 @@ footer .txs a {
 	display: none;
     margin: 0;
 	padding: 0;
+	text-shadow: 2px 2px 4px #000000;
 }
 
 .active .long-desc {
