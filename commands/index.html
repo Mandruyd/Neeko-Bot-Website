@@ -20,7 +20,7 @@
 <body>
     <div id="mob"><span class="fa fa-list-ul"></span></div>
 
-    <nav id="navigation">
+    <nav id="navigation" class="cmdh">
         <div class="con">
             <a href="/"> <img src="../images/logo.png" alt="Logo" class="logo"></a>
 
@@ -39,14 +39,19 @@
         </div>
     </nav>
 
-    <div class="fl2">
+    <div class="x-cmds-page">
         <section>
-            <div class="container">
 
-                <div class="cmds-list">
-                    <h1>Commands</h1>
+            <div class="container">
+                <h1 class="x-cmds-title">Commands</h1>
+                <div class="x-cmds-list">
+                    <div class="x-cmds-options">
+                        <input type="text" class="x-cmds-search" placeholder="Search...">
+                        <select name="cmdsList" id="selectCmdsList">
+                            <option value="all">All</option>
+                        </select>
+                    </div>
                     <div class="cats">
-                        <button id="all" class="btn btn-dark">All</button>
                     </div>
                     <div id="list">
                     </div>

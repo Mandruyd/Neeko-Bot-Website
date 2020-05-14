@@ -34,12 +34,17 @@ body {
 .cmd {
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap !important;
-	text-align:left !important;
+	background-color: #113b53;
+	padding:30px;
+	border-radius: 3px;
+	margin-bottom: 20px;
 }
 .cmd-title{
 	width:100%;
-	text-shadow: 2px 2px 4px #000000;
+	color:#f3f3f3;
+	font-size: 30px;
+	border-bottom: 2px solid #2c2c2c;
+	padding: 0 0 10px 0;
 }
 ul {
 	list-style: none
@@ -121,15 +126,19 @@ a:hover {
 	font-size: 15px;
 	font-weight: 600
 }
-
+.cmd-info{
+	color:#f3f3f3; 
+}
 .cmds-list #list .cmd-info {
 	text-align: left;
 	color: #a19d9d;
 	font-size: 15px;
 	font-weight: 200
 }
-
-.cmds-list .cats {
+.cats{
+	display: none;
+}
+.cmds-list  {
 	background-color: #24252a;
 	padding: 10px 10px;
 	border-radius: 5px;
@@ -338,7 +347,9 @@ a:hover {
 	font-size: 15px;
 	font-weight: 200
 }
-
+.cmdh{
+	background-color: #1c2121;
+}
 .commands {
 	padding: 80px 0;
 	text-align: center
@@ -877,7 +888,6 @@ footer .txs a {
 
 .collapsible:hover {
 	cursor: pointer;
-	background-color: #343638 !important;
 }
 
 .collapsible .cmd-info::after {
@@ -893,9 +903,95 @@ footer .txs a {
 	display: none;
     margin: 0;
 	padding: 0;
-	text-shadow: 2px 2px 4px #000000;
+	color:#f3f3f3;
+	
 }
 
 .active .long-desc {
 	display: block;
+}
+.cmd-title{
+	position: relative;
+}
+.popup:hover::before{
+	content: '';
+	position: absolute;
+	border:10px solid black;
+	border-color:rgb(22, 21, 21)  transparent transparent transparent;
+	top:-10px;
+	left:22px;
+	transition: ease;
+	transition-duration: 2s;
+}
+.popup:hover::after{
+	position: absolute;
+	content: attr(alias);
+	background-color: rgb(22, 21, 21);
+	padding:5px 15px;
+	color:#e2e2e2;
+	font-weight: 600;
+	border-radius: 10px;
+	top:-45px;
+	left:-6px;
+	font-size: 15px;
+	opacity: 1;
+	transition: ease;
+	
+}
+.x-cmds-page{
+	background-color: #1c2121;
+	min-height: 100vh;
+	padding-bottom: 20px;
+}
+.x-cmds-page .container{
+	width: 90%;
+	margin:0 auto;
+}
+.x-cmds-page .x-cmds-list{
+	background-color: #365e74;
+	padding:50px;
+	border-radius: 10px;
+}
+.x-cmds-title{
+	font-size: 40px;
+	color:#f3f3f3;
+	padding:50px;
+	text-align: center;
+}
+.x-cmds-options{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 30px;
+}
+.x-cmds-options select {
+	min-width: 150px;
+	max-width: 150px;
+}
+.x-cmds-options select * {
+		border:none;
+		background-color:rgb(60, 89, 100); 
+}
+.x-cmds-options select *:focus {
+	
+}
+.x-cmds-options input,.x-cmds-options select{
+	outline:none;
+	padding:8px 10px;
+	font-size: 20px;
+	border-radius: 5px;
+	background-color: #113b53;
+	color:#f3f3f3;
+	border:none;
+}
+.x-cmds-options input::placeholder{
+	color:#f3f3f3;
+}
+@media (max-width:630px){
+	.x-cmds-options{
+		flex-direction: column;
+	}
+	#selectCmdsList{
+		margin-top: 20px;
+		align-self: center;
+	}
 }

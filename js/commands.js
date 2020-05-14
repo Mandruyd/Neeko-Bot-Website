@@ -1,5 +1,8 @@
-// Made by Kovacs Alex
+// Made by Kovacs Alex 
 // https://github.com/alexthemaster
+
+// Lite editing by Laurentiu
+// https://github.com/laurentiu0
 
 (async () => {
     const COMMANDS_API = "https://api.neeko-bot.xyz/commands";
@@ -8,9 +11,9 @@
     if (commands.status != 200) throw console.error("Couldn't fetch commands.");
     commands = await commands.json();
 
-    const categoriesEl = document.querySelector('.cats');
-    const allEl = document.querySelector('#all');
+    const categoriesEl = document.querySelector('#selectCmdsList');
     const listEl = document.querySelector('#list');
+    const searchCmd = document.querySelector('.x-cmds-search');
 
     const cmdsArray = [];
 
@@ -18,33 +21,34 @@
         addCategory(category);
 
         commands[category].forEach(command => {
-            addCommand(category, Object.keys(command)[0], Object.values(command)[0], command.long_desc);
+            addCommand(category, Object.keys(command)[0], Object.values(command)[0], command.long_desc, Object.values(command)[2]);
         });
     }
 
     function addCategory(name) {
-        const btn = document.createElement('button');
+        const btn = document.createElement('option');
         btn.id = name;
         btn.innerText = name;
-        btn.classList.add('btn', 'btn-dark');
 
-        const cat = categoriesEl.appendChild(btn);
+        const cat = categoriesEl.appendChild(btn)
 
-        cat.addEventListener('click', () => {
-            cmdsArray.forEach(cmd => {
-                if (!cmd.classList.contains(cat.id)) cmd.hidden = true;
-                else cmd.hidden = false;
-            })
-        })
+        // cat.addEventListener('change', () => {
+        //     cmdsArray.forEach(cmd => {
+        //         if (!cmd.classList.contains(cat.id)) cmd.hidden = true;
+        //         else cmd.hidden = false;
+        //     })
+        // })
     }
 
-    function addCommand(category, name, info, longDesc) {
+    function addCommand(category, name, info, longDesc,alias) {
         const commandEl = document.createElement('div');
         commandEl.classList.add('cmd');
         commandEl.classList.add(category)
 
         const titleEl = document.createElement('p');
         titleEl.classList.add('cmd-title');
+        titleEl.setAttribute("alias", (alias.length>1)?alias.join(", "):"");
+        (alias.length>1)?titleEl.classList.add("popup"):"";
         titleEl.innerText = name;
 
         const infoEl = document.createElement('p');
@@ -74,10 +78,34 @@
         })
     })
 
-    allEl.addEventListener('click', () => {
-        cmdsArray.forEach(cmd => {
-            cmd.hidden = false;
-        })
-    });
+    categoriesEl.addEventListener('change',(e)=>{
+        if(e.target.value == "all"){
+            cmdsArray.forEach(cmd => {
+                cmd.hidden = false;
+            })
+        }else{
+            cmdsArray.forEach(cmd => {
+                if (!cmd.classList.contains(e.target.children[e.target.selectedIndex].id)) cmd.hidden = true;
+                else cmd.hidden = false;
+            })
+        }
+    })
+    // allEl.addEventListener('click', () => {
+    //     cmdsArray.forEach(cmd => {
+    //         cmd.hidden = false;
+    //     })
+    // });
 
+    searchCmd.addEventListener('keyup',(e)=>
+    {
+        if(e.target.value == " "){
+            cmd.hidden = false;
+        }else{
+            cmdsArray.forEach(cmd =>{
+                // console.log(cmd.children[0].innerText.includes(e.target.value))
+                if (!cmd.children[0].innerText.includes(e.target.value)) cmd.hidden = true;
+                else cmd.hidden = false;
+            })
+        }
+    })
 })();
