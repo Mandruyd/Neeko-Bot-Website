@@ -3,18 +3,18 @@ const TEAM_API = "https://api.neeko-bot.xyz/uavatar=";
 
 const teamMembers = [
     {
-        discordID: "617067319121805419",
-        name: 'Alex',
-        info: 'Support Team / Ideas / Website / Emotional Support',
-        githubLink: 'https://github.com/alexthemaster',
-        websiteLink: 'https://atm.moe/',
-    },
-    {
         discordID: "318844711701970964",
         name: 'Mandruyd',
         info: 'Hello there, I\'m the creator of Neeko',
         githubLink: 'https://github.com/Mandruyd/Neeko',
         websiteLink: 'https://neeko-bot.xyz/',
+    },
+    {
+        discordID: "617067319121805419",
+        name: 'Alex',
+        info: 'Support Team / Ideas / Website / Emotional Support',
+        githubLink: 'https://github.com/alexthemaster',
+        websiteLink: 'https://atm.moe/',
     },
     {
         discordID: "519772560875978752",
@@ -23,19 +23,48 @@ const teamMembers = [
         githubLink: 'https://github.com/laurentiu0/',
         websiteLink: 'https://laurentiu.live/',
     },
+    {
+        discordID: "139793690712473600",
+        name: 'Seb',
+        info: 'Support Team / Ideas',
+        websiteLink: 'https://yoshifan.me/',
+        githubLink: 'https://github.com/YoshiFan13/'
+    },
+    {
+        discordID: "265525280733528064",
+        name: 'Harrasko',
+        info: 'Support Team / Code',
+        githubLink: 'https://github.com/Harrasko/'
+    },
+    {
+        discordID: "194038186064871424",
+        name: 'AlexutzRO',
+        info: 'Retired Coder',
+    },
+    {
+        discordID: "274982300985589760",
+        name: "Armanalex",
+        info: 'Support Team™️ / Ideas'
+    },
+    {
+        discordID: "622511721075965963",
+        name: 'Hex',
+        info: 'Support Team / Ideas',
+        githubLink: 'https://github.com/HexHunter34/'
+    }
 ];
 
 /**
  * Fetches the URL to a user's Discord profile picture
- * @param {string} pictureURL 
+ * @param {Array<string>} pictureURL 
  */
-async function fetchPicture(pictureURL) {
-    const picture = await fetch(pictureURL);
-    return await picture.text();
+async function fetchPictures(ids) {
+    const picture = await fetch(TEAM_API + ids);
+    return await picture.json();
 }
 
 /**
- * Add's a member div to the team-container div
+ * Adds all the team members to the page
  * @param {string} members 
  */
 function addMember(members) {
@@ -44,21 +73,21 @@ function addMember(members) {
 
 /**
  * A function that generates an appropiate div with the details of a team member
- * @param {string} image 
+ * @param {string} avatar 
  * @param {string} name 
  * @param {string} info 
  * @param {string} [githubLink] 
  * @param {string} [websiteLink] 
  */
-function teamMemberTemplate(image, name, info, githubLink, websiteLink) {
+function teamMemberTemplate(avatar, name, info, githubLink, websiteLink) {
     return `
 <div class="team-member">
-    <div class="team-member-img"><img  src="${image}"></div>
+    <div class="team-member-img"><img src="${avatar}"></div>
     <div class="team-member-name">${name}</div>
     ${info ? `<div class="team-member-info">${info}</div>` : ''}
     <div class="team-member-social">
-        ${githubLink ? `<button><a href="${githubLink}"><i class="fab fa-github"></i></a></button>` : ''}
-        ${websiteLink ? `<button><a href="${websiteLink}"><i class="fas fa-link"></i></a></button>` : ''}                    
+        ${githubLink ? `<button><a href="${githubLink}" target="_blank" rel=”noreferrer noopener”><i class="fab fa-github"></i></a></button>` : ''}
+        ${websiteLink ? `<button><a href="${websiteLink}" target="_blank" rel=”noreferrer noopener”><i class="fas fa-link"></i></a></button>` : ''}                    
     </div>
 </div>
 `;
@@ -66,9 +95,12 @@ function teamMemberTemplate(image, name, info, githubLink, websiteLink) {
 
 (async () => {
     let createUsers = '';
+
+    const avatars = await fetchPictures(teamMembers.map(member => member.discordID).join(','));
+
     for (let i = 0; i < teamMembers.length; i++) {
-        let picture = await fetchPicture(TEAM_API + teamMembers[i].discordID);
-        createUsers += teamMemberTemplate(picture, teamMembers[i].name, teamMembers[i].info, teamMembers[i].githubLink, teamMembers[i].websiteLink);
+        createUsers += teamMemberTemplate(avatars[teamMembers[i].discordID], teamMembers[i].name, teamMembers[i].info, teamMembers[i].githubLink, teamMembers[i].websiteLink);
     }
+
     addMember(createUsers);
 })();
