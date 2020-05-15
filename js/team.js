@@ -40,6 +40,7 @@ const teamMembers = [
         discordID: "194038186064871424",
         name: 'AlexutzRO',
         info: 'Retired Coder',
+        githubLink: 'https://github.com/alexutzro/'
     },
     {
         discordID: "274982300985589760",
