@@ -31,6 +31,7 @@ body {
 	-ms-grid-rows: (minmax(100px, auto))[3];
 	grid-template-rows: repeat(3, minmax(100px, auto))
 }
+
 .cmd {
 	display: flex;
 	flex-direction: column;
@@ -39,6 +40,7 @@ body {
 	border-radius: 3px;
 	margin-bottom: 20px;
 }
+
 .cmd-title{
 	width:100%;
 	color:#f3f3f3;
@@ -46,6 +48,7 @@ body {
 	border-bottom: 2px solid #2c2c2c;
 	padding: 0 0 10px 0;
 }
+
 ul {
 	list-style: none
 }
@@ -988,7 +991,8 @@ footer .txs a {
 .x-cmds-options input::placeholder{
 	color:#f3f3f3;
 }
-@media (max-width:630px){
+
+@media (max-width:630px) {
 	.x-cmds-options{
 		flex-direction: column;
 	}
@@ -997,7 +1001,7 @@ footer .txs a {
 		align-self: center;
 	}
 }
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@100&display=swap');
+
 .team-container{
 	width: 80%;
 	margin: auto;
@@ -1039,7 +1043,7 @@ footer .txs a {
 	border-radius: 100%;
 	box-shadow: 2px 2px 9px 2px #000;
 }
-.team-member-name{
+.team-member-name {
 	display: flex;
 	align-items: center;
 	height: 10%;
