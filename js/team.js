@@ -100,7 +100,7 @@ function teamMemberTemplate(avatar, name, info, githubLink, websiteLink) {
 (async () => {
     let createUsers = '';
 
-    const avatars = await fetchPictures(teamMembers.map(member => member.discordID).join(',')).catch(() => o_O)
+    const avatars = await fetchPictures(teamMembers.map(member => member.discordID).join(','));
 
     for (let i = 0; i < teamMembers.length; i++) {
         createUsers += teamMemberTemplate(avatars && avatars[teamMembers[i].discordID] || 'https://i.imgur.com/dxJt82X.png', teamMembers[i].name, teamMembers[i].info, teamMembers[i].githubLink, teamMembers[i].websiteLink);
