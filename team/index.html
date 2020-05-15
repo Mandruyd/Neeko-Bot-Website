@@ -18,9 +18,10 @@
 </head>
 
 <body>
+    <div class="dd">
     <div id="mob"><span class="fa fa-list-ul"></span></div>
 
-    <nav id="navigation" class="cmdh">
+    <nav id="navigation">
         <div class="con">
             <a href="/"> <img src="../images/logo.png" alt="Logo" class="logo"></a>
 
@@ -29,54 +30,46 @@
                 <ul>
 
                     <li><a href="#"><span class="fab fa-discord"></span>Add to Discord</a></li>
-                    <li><a href="#"><span class="fas fa-scroll"></span>Commands</a></li>
+                    <li><a href="/commands"><span class="fas fa-scroll"></span>Commands</a></li>
                     <li><a href="https://www.patreon.com/NeekoBot" target="_blank"><span
                                 class="fas fa-headphones-alt"></span>Premium</a></li>
                     <li><a href="https://discord.gg/rhGfvzG"><span class="fas fa-info-circle"></span>Support</a></li>
-                    <li><a href="/team"><span class="fas fa-users-cog"></span>Meet the Team</a></li>
+                    <li><a href="#"><span class="fas fa-users-cog"></span>Meet the Team</a></li>
                 </ul>
 
             </div>
         </div>
     </nav>
-
-    <div class="x-cmds-page">
-        <section>
-
-            <div class="container">
-                <h1 class="x-cmds-title">Commands</h1>
-                <div class="x-cmds-list">
-                    <div class="x-cmds-options">
-                        <input type="text" class="x-cmds-search" placeholder="Search...">
-                        <select name="cmdsList" id="selectCmdsList">
-                            <option value="all">All</option>
-                        </select>
-                    </div>
-                    <div class="cats">
-                    </div>
-                    <div id="list">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section></section>
-
+    <div class="team-page">
+        <div class="team-page-title">Team Page</div>
+        <div class="team-container">
+            
+        </div>
+    </div>
+<footer class="footer-team">
+    <div class=" txs ss">
+        <p>&copy; Neeko Bot <script>document.write(new Date().getFullYear())</script></p>
+        <p>website <span class="fas fa-code"></span> with <span class="fas fa-heart"></span> by <a
+                target="_blank">Neeko Team</a></p>
+    </div>
+</footer>
 
     </div>
     <div id="mob-menu">
         <div id="close"> <span class="fas fa-times"></span></div>
         <ul>
             <li><a href="/"><span class="fas fa-home"></span>Home</a></li>
-            <li><a href="#"><span class="fas fa-scroll"></span>Commands</a></li>
+            <li><a href="/commands"><span class="fas fa-scroll"></span>Commands</a></li>
             <li><a href="https://www.patreon.com/NeekoBot" target="_blank"><span
                         class="fas fa-headphones-alt"></span>Premium</a></li>
             <li><a href="https://discord.gg/rhGfvzG"><span class="fas fa-info-circle"></span>Support</a></li>
             <li><a href="#"><span class="fab fa-discord"></span>Add to Discord</a></li>
-            <li><a href="/team"><span class="fas fa-users-cog"></span>Meet the Team</a></li>
+            <li><a href="#"><span class="fas fa-users-cog"></span>Meet the Team</a></li>
         </ul>
     </div>
-    <script src="../js/commands.js"></script>
+</div>
     <script src="../js/bm.js"></script>
+    <script src="../js/team.js"></script>
 </body>
 
 </html>

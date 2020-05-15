@@ -103,7 +103,7 @@
         }else{
             cmdsArray.forEach(cmd =>{
                 // console.log(cmd.children[0].innerText.includes(e.target.value))
-                if (!cmd.children[0].innerText.includes(e.target.value)) cmd.hidden = true;
+                if (!cmd.children[0].innerText.toLowerCase().includes(e.target.value.toLowerCase())) cmd.hidden = true;
                 else cmd.hidden = false;
             })
         }

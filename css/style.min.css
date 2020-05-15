@@ -652,7 +652,7 @@ footer .txs a {
 	}
 }
 
-@media (max-width: 700px) {
+@media (max-width: 810px) {
 	nav {
 		display: none
 	}
@@ -825,6 +825,7 @@ footer .txs a {
 		margin-top: 10px
 	}
 	#mob-menu {
+		grid-area:header;
 		top: 0px;
 		position: fixed;
 		width: 200px;
@@ -921,8 +922,9 @@ footer .txs a {
 	top:-10px;
 	left:22px;
 	transition: ease;
-	transition-duration: 2s;
+	transition-duration: 10s;
 }
+
 .popup:hover::after{
 	position: absolute;
 	content: attr(alias);
@@ -994,4 +996,114 @@ footer .txs a {
 		margin-top: 20px;
 		align-self: center;
 	}
+}
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@100&display=swap');
+.team-container{
+	width: 80%;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-self: center;
+}
+.team-member{
+	background-color: #23272A;
+	border-radius: 10px;
+	padding:10px 20px;
+	max-width: 200px;
+	min-width: 200px;
+	min-height: 300px;
+	max-height: 300px;
+	margin:10px 10px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color:#b8b2b2;
+
+}
+.team-member-img{
+	height: 40%;
+}
+.team-member-img img{
+	width: 100px;
+	border-radius: 100%;
+	box-shadow: 2px 2px 9px 2px rgb(0, 0, 0);
+	transition: width 0.2s;
+	
+}
+.team-member-img img:hover{
+	width: 105px;
+	transition-timing-function: ease-in-out;
+	border-radius: 100%;
+	box-shadow: 2px 2px 9px 2px #000;
+}
+.team-member-name{
+	display: flex;
+	align-items: center;
+	height: 10%;
+	font-weight: bold;
+	font-size: 20px;
+	text-transform: capitalize;
+	font-family: 'Roboto';
+	color:#fff;
+}
+.team-member-info{
+	display: flex;
+	align-items: center;
+	height: 30%;
+	font-size: 13px;
+	text-align: center;
+	opacity:0.7;
+}
+.team-member-social{
+	display: flex;
+	align-items: center;
+	height: 20%;
+}
+.team-member-social button{
+	border-radius: 100%;
+	padding:5px;
+	background-color: #2C2F33;
+	color:#f3f3f3;
+	border: none;
+	margin:0 3px;
+}
+
+.team-page{
+	min-height: 70vh;
+}
+.team-page-title{
+	color:#ffffff;
+	font-size: 40px;
+	text-align: center;
+	padding: 60px 0;
+	font-family: Roboto;
+}
+.footer-team{
+	grid-row: 4/5;
+	height:80px;
+	align-self: flex-end;
+}
+.dd{
+	display: grid;
+	grid-template-rows: 0.1fr 4.9fr 1fr ;
+	grid-template: 
+	'header header header'
+	'body body body body'
+	'footer footer footer'
+	;
+}
+@media (max-width:900px){
+	#mob{
+		max-width: 20px;
+		max-height: 20px;
+	}
+}
+.footer-team .txs{
+	margin-bottom:0;
+}
+.ss{
+	align-items: center;
 }
