@@ -30,25 +30,18 @@
         btn.id = name;
         btn.innerText = name;
 
-        const cat = categoriesEl.appendChild(btn)
-
-        // cat.addEventListener('change', () => {
-        //     cmdsArray.forEach(cmd => {
-        //         if (!cmd.classList.contains(cat.id)) cmd.hidden = true;
-        //         else cmd.hidden = false;
-        //     })
-        // })
+        categoriesEl.appendChild(btn)
     }
 
-    function addCommand(category, name, info, longDesc,alias) {
+    function addCommand(category, name, info, longDesc, alias) {
         const commandEl = document.createElement('div');
         commandEl.classList.add('cmd');
         commandEl.classList.add(category)
 
         const titleEl = document.createElement('p');
         titleEl.classList.add('cmd-title');
-        titleEl.setAttribute("alias", (alias.length>1)?alias.join(", "):"");
-        (alias.length>1)?titleEl.classList.add("popup"):"";
+        titleEl.setAttribute("alias", (alias.length > 1) ? alias.join(", ") : "");
+        (alias.length > 1) ? titleEl.classList.add("popup") : "";
         titleEl.innerText = name;
 
         const infoEl = document.createElement('p');
@@ -78,31 +71,23 @@
         })
     })
 
-    categoriesEl.addEventListener('change',(e)=>{
-        if(e.target.value == "all"){
+    categoriesEl.addEventListener('change', (e) => {
+        if (e.target.value == "all") {
             cmdsArray.forEach(cmd => {
                 cmd.hidden = false;
             })
-        }else{
+        } else {
             cmdsArray.forEach(cmd => {
                 if (!cmd.classList.contains(e.target.children[e.target.selectedIndex].id)) cmd.hidden = true;
                 else cmd.hidden = false;
             })
         }
     })
-    // allEl.addEventListener('click', () => {
-    //     cmdsArray.forEach(cmd => {
-    //         cmd.hidden = false;
-    //     })
-    // });
 
-    searchCmd.addEventListener('keyup',(e)=>
-    {
-        if(e.target.value == " "){
-            cmd.hidden = false;
-        }else{
-            cmdsArray.forEach(cmd =>{
-                // console.log(cmd.children[0].innerText.includes(e.target.value))
+    searchCmd.addEventListener('keyup', (e) => {
+        if (e.target.value == " ") cmd.hidden = false;
+        else {
+            cmdsArray.forEach(cmd => {
                 if (!cmd.children[0].innerText.toLowerCase().includes(e.target.value.toLowerCase())) cmd.hidden = true;
                 else cmd.hidden = false;
             })
