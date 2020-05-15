@@ -59,8 +59,12 @@ const teamMembers = [
  * @param {Array<string>} pictureURL 
  */
 async function fetchPictures(ids) {
-    const picture = await fetch(TEAM_API + ids);
-    return await picture.json();
+    try {
+        let picture = await fetch(TEAM_API + ids)
+        return await picture.json();
+    } catch {
+        return null;
+    }
 }
 
 /**
@@ -96,10 +100,10 @@ function teamMemberTemplate(avatar, name, info, githubLink, websiteLink) {
 (async () => {
     let createUsers = '';
 
-    const avatars = await fetchPictures(teamMembers.map(member => member.discordID).join(','));
+    const avatars = await fetchPictures(teamMembers.map(member => member.discordID).join(',')).catch(() => o_O)
 
     for (let i = 0; i < teamMembers.length; i++) {
-        createUsers += teamMemberTemplate(avatars[teamMembers[i].discordID], teamMembers[i].name, teamMembers[i].info, teamMembers[i].githubLink, teamMembers[i].websiteLink);
+        createUsers += teamMemberTemplate(avatars && avatars[teamMembers[i].discordID] || 'https://i.imgur.com/dxJt82X.png', teamMembers[i].name, teamMembers[i].info, teamMembers[i].githubLink, teamMembers[i].websiteLink);
     }
 
     addMember(createUsers);
