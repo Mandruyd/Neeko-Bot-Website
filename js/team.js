@@ -173,7 +173,7 @@ function teamMemberTemplate(avatar, name, info, githubLink, websiteLink, instagr
     strTemplate += `
         <div class="team-member-img"><img src="${avatar}"></div>
         <div class="team-member-name">${name}</div>
-        ${info ? ((name == "Mandruyd") ? `<div class="team-member-info" style="color:cyan; font-family: Roboto;opacity: 1">${info}</div>` : `<div class="team-member-info">${info}</div>`) : ''}
+        ${info ? ((name == "Mandruyd") ? `<div class="team-member-info" style="color: cyan; opacity: 1">${info}</div>` : `<div class="team-member-info">${info}</div>`) : ''}
         <div class="team-member-social">
             ${githubLink ? `<button><a href="${githubLink}" target="_blank" rel=”noreferrer noopener”><i class="fab fa-github"></i></a></button>` : ''}
             ${websiteLink ? `<button><a href="${websiteLink}" target="_blank" rel=”noreferrer noopener”><i class="fas fa-link"></i></a></button>` : ''}
