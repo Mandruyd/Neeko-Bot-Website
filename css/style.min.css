@@ -1100,7 +1100,7 @@ footer .txs a {
 }
 .dd{
 	display: grid;
-	grid-template-rows: 0.1fr 4.9fr 1fr ;
+	grid-template-rows: 0.1fr 4.9fr 0.3fr ;
 	grid-template: 
 	'header header header'
 	'body body body body'
