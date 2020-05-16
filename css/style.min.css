@@ -988,6 +988,9 @@ footer .txs a {
 	color:#f3f3f3;
 	border:none;
 }
+.x-cmds-options input::placeholder{
+	color:#f3f3f3;
+}
 
 @media (max-width:630px) {
 	.x-cmds-options{
@@ -1000,6 +1003,15 @@ footer .txs a {
 }
 
 .team-container{
+	width: 80%;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-self: center;
+}
+.translator-container{
 	width: 80%;
 	margin: auto;
 	display: flex;
