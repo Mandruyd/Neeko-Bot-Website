@@ -63,7 +63,6 @@ const translatorMembers = [
     discordID : "241983341757333505",
     name: "Sam",
     info: "Dutch Translator",
-    githubLink: "https://google.ro/"
     },
     {
         discordID: "253911407349727232",
