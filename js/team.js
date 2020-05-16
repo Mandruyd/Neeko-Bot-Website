@@ -1,6 +1,6 @@
+const TEAM_API = "https://api.neeko-bot.xyz/uavatar=";
 const teamContainer = document.querySelector(".team-container");
 const translatorContainer = document.querySelector(".translator-container");
-const TEAM_API = "https://api.neeko-bot.xyz/uavatar=";
 
 const teamMembers = [
     {
@@ -13,9 +13,10 @@ const teamMembers = [
     {
         discordID: "617067319121805419",
         name: 'Alex',
-        info: 'Support Team / Ideas / Website / Emotional Support',
+        info: 'Support Team / Ideas / Website Code / Emotional Support / Translator',
         githubLink: 'https://github.com/alexthemaster',
         websiteLink: 'https://atm.moe/',
+        instagramLink: 'https://instagram.com/alexthemaster/'
     },
     {
         discordID: "519772560875978752",
@@ -60,9 +61,9 @@ const teamMembers = [
 
 const translatorMembers = [
     {
-    discordID : "241983341757333505",
-    name: "Sam",
-    info: "Dutch Translator",
+        discordID: "241983341757333505",
+        name: "Sam",
+        info: "Dutch Translator",
     },
     {
         discordID: "253911407349727232",
@@ -118,13 +119,13 @@ const translatorMembers = [
         name: "iHeb",
         info: "Arabic Translator"
     }
-
 ];
 
 
 /**
  * Fetches the URL to a user's Discord profile picture
- * @param {Array<string>} pictureURL 
+ * @param {Array<string>} ids 
+ * @returns {Promise<Object>|null}
  */
 async function fetchPictures(ids) {
     try {
@@ -138,11 +139,18 @@ async function fetchPictures(ids) {
 /**
  * Adds all the team members to the page
  * @param {string} members 
+ * @returns {void}
  */
-function addMember(members) {
+function addMembers(members) {
     teamContainer.innerHTML += members;
 }
-function addTranslator(members) {
+
+/**
+ * Adds all the translators to the page
+ * @param {string} members
+ * @returns {void} 
+ */
+function addTranslators(members) {
     translatorContainer.innerHTML += members;
 }
 
@@ -155,19 +163,17 @@ function addTranslator(members) {
  * @param {string} [githubLink] 
  * @param {string} [websiteLink]
  * @param {string} [instagramLink] 
+ * @returns {string}
  */
 function teamMemberTemplate(avatar, name, info, githubLink, websiteLink, instagramLink) {
-    strTemplate = ``
-    if (name == "Mandruyd") {
-        strTemplate+= `<div class="team-member", style="background-image: url('https://cdn.neeko-bot.xyz/owner.gif')">`
-    }
-    else {
-        strTemplate+= `<div class="team-member">`
-    }
+    let strTemplate = '';
+
+    name == "Mandruyd" ? strTemplate += `<div class="team-member", style="background-image: url('https://cdn.neeko-bot.xyz/owner.gif')">` : strTemplate += `<div class="team-member">`;
+
     strTemplate += `
         <div class="team-member-img"><img src="${avatar}"></div>
         <div class="team-member-name">${name}</div>
-        ${info ? ((name == "Mandruyd") ? `<div class="team-member-info" style="color:cyan; font-family: Roboto;opacity: 1">${info}</div>` : `<div class="team-member-info">${info}</div>`): ''}
+        ${info ? ((name == "Mandruyd") ? `<div class="team-member-info" style="color:cyan; font-family: Roboto;opacity: 1">${info}</div>` : `<div class="team-member-info">${info}</div>`) : ''}
         <div class="team-member-social">
             ${githubLink ? `<button><a href="${githubLink}" target="_blank" rel=”noreferrer noopener”><i class="fab fa-github"></i></a></button>` : ''}
             ${websiteLink ? `<button><a href="${websiteLink}" target="_blank" rel=”noreferrer noopener”><i class="fas fa-link"></i></a></button>` : ''}
@@ -176,8 +182,7 @@ function teamMemberTemplate(avatar, name, info, githubLink, websiteLink, instagr
     </div>
     `;
 
-
-    return strTemplate
+    return strTemplate;
 }
 
 
@@ -189,19 +194,18 @@ function teamMemberTemplate(avatar, name, info, githubLink, websiteLink, instagr
     const avatars = await fetchPictures(teamMembers.map(member => member.discordID).join(','));
     const tavatars = await fetchPictures(translatorMembers.map(member => member.discordID).join(','));
 
-
     for (let i = 0; i < teamMembers.length; i++) {
         createUsers += teamMemberTemplate(avatars && avatars[teamMembers[i].discordID] || 'https://cdn.discordapp.com/embed/avatars/4.png', teamMembers[i].name, teamMembers[i].info, teamMembers[i].githubLink, teamMembers[i].websiteLink, teamMembers[i].instagramLink);
     }
 
-    createTranslators = '';
+    let createTranslators = '';
 
-    translatorMembers.sort((a, b) => (a.name > b.name) ? 1 : -1)
+    translatorMembers.sort((a, b) => (a.name > b.name) ? 1 : -1);
 
     for (let i = 0; i < translatorMembers.length; i++) {
         createTranslators += teamMemberTemplate(tavatars && tavatars[translatorMembers[i].discordID] || 'https://cdn.discordapp.com/embed/avatars/4.png', translatorMembers[i].name, translatorMembers[i].info, translatorMembers[i].githubLink, translatorMembers[i].websiteLink, translatorMembers[i].instagramLink);
     }
 
-    addMember(createUsers);
-    addTranslator(createTranslators)
+    addMembers(createUsers);
+    addTranslators(createTranslators);
 })();
