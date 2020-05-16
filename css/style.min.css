@@ -35,7 +35,7 @@ body {
 .cmd {
 	display: flex;
 	flex-direction: column;
-	background-color: #113b53;
+	background-color: #23272A;
 	padding:30px;
 	border-radius: 3px;
 	margin-bottom: 20px;
@@ -953,7 +953,7 @@ footer .txs a {
 	margin:0 auto;
 }
 .x-cmds-page .x-cmds-list{
-	background-color: #365e74;
+	background-color: #2C2F33;
 	padding:50px;
 	border-radius: 10px;
 }
@@ -974,7 +974,7 @@ footer .txs a {
 }
 .x-cmds-options select * {
 		border:none;
-		background-color:rgb(60, 89, 100); 
+		background-color:#1c2121; 
 }
 .x-cmds-options select *:focus {
 	
@@ -984,12 +984,9 @@ footer .txs a {
 	padding:8px 10px;
 	font-size: 20px;
 	border-radius: 5px;
-	background-color: #113b53;
+	background-color: #23272A;
 	color:#f3f3f3;
 	border:none;
-}
-.x-cmds-options input::placeholder{
-	color:#f3f3f3;
 }
 
 @media (max-width:630px) {
