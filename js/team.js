@@ -133,7 +133,7 @@ async function fetchPictures(ids) {
     try {
         let picture = await fetch(TEAM_API + ids)
         return await picture.json();
-    } catch {
+    } catch (o_O) {
         return null;
     }
 }
