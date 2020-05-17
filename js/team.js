@@ -1,57 +1,59 @@
-const TEAM_API = "https://api.neeko-bot.xyz/uavatar=";
-const teamContainer = document.querySelector(".team-container");
-const translatorContainer = document.querySelector(".translator-container");
+const TEAM_API = 'https://api.neeko-bot.xyz/uavatar=';
+const teamContainer = document.querySelector('.team-container');
+const translatorContainer = document.querySelector('.translator-container');
 
 const teamMembers = [
     {
-        discordID: "318844711701970964",
+        discordID: '318844711701970964',
         name: 'Mandruyd',
         info: 'Creator / Dev / Translator',
-        githubLink: 'https://github.com/Mandruyd/Neeko',
+        githubLink: 'https://github.com/Mandruyd/',
         websiteLink: 'https://neeko-bot.xyz/',
     },
     {
-        discordID: "617067319121805419",
+        discordID: '617067319121805419',
         name: 'Alex',
         info: 'Support Team / Ideas / Website Code / Emotional Support / Translator',
-        githubLink: 'https://github.com/alexthemaster',
+        githubLink: 'https://github.com/alexthemaster/',
         websiteLink: 'https://atm.moe/',
-        instagramLink: 'https://instagram.com/alexthemaster/'
+        instagramLink: 'https://instagram.com/alexthemaster/',
+        youtubeLink: 'https://youtube.com/raplayerofficial/'
     },
     {
-        discordID: "519772560875978752",
+        discordID: '519772560875978752',
         name: 'Laurentiu',
         info: 'On my way to make the www better.',
         githubLink: 'https://github.com/laurentiu0/',
         websiteLink: 'https://laurentiu.live/',
     },
     {
-        discordID: "139793690712473600",
+        discordID: '139793690712473600',
         name: 'Seb',
         info: 'Support Team / Ideas',
         websiteLink: 'https://yoshifan.me/',
-        githubLink: 'https://github.com/YoshiFan13/'
+        githubLink: 'https://github.com/YoshiFan13/',
+        youtubeLink: 'https://youtube.com/avrilloosing/'
     },
     {
-        discordID: "265525280733528064",
+        discordID: '265525280733528064',
         name: 'Harrasko',
         info: 'Support Team / Code',
         githubLink: 'https://github.com/Harrasko/'
     },
     {
-        discordID: "194038186064871424",
+        discordID: '194038186064871424',
         name: 'AlexutzRO',
         info: 'Retired Coder',
         githubLink: 'https://github.com/alexutzro/'
     },
     {
-        discordID: "274982300985589760",
-        name: "Armanalex",
+        discordID: '274982300985589760',
+        name: 'Armanalex',
         info: 'Support Team™️ / Ideas',
-        instagramLink: "https://www.instagram.com/armanalexx/"
+        instagramLink: 'https://www.instagram.com/armanalexx/'
     },
     {
-        discordID: "622511721075965963",
+        discordID: '622511721075965963',
         name: 'Hex',
         info: 'Support Team / Ideas',
         githubLink: 'https://github.com/HexHunter34/'
@@ -61,66 +63,66 @@ const teamMembers = [
 
 const translatorMembers = [
     {
-        discordID: "241983341757333505",
-        name: "Sam",
-        info: "Dutch Translator",
+        discordID: '241983341757333505',
+        name: 'Sam',
+        info: 'Dutch Translator',
     },
     {
-        discordID: "253911407349727232",
-        name: "Leandro",
-        info: "Portuguese Translator",
-        instagramLink: "https://www.instagram.com/leandro13_04/"
+        discordID: '253911407349727232',
+        name: 'Leandro',
+        info: 'Portuguese Translator',
+        instagramLink: 'https://www.instagram.com/leandro13_04/'
     },
     {
-        discordID: "298968795270348800",
-        name: "Crapking",
-        info: "German Translator"
+        discordID: '298968795270348800',
+        name: 'Crapking',
+        info: 'German Translator'
     },
     {
-        discordID: "266783267355754507",
-        name: "BEEPS",
-        info: "Mongolian Translator",
-        instagramLink: "https://www.instagram.com/rosu.tu/"
+        discordID: '266783267355754507',
+        name: 'BEEPS',
+        info: 'Mongolian Translator',
+        instagramLink: 'https://www.instagram.com/rosu.tu/'
     },
     {
-        discordID: "318694267621212162",
-        name: "Dan",
-        info: "Russian Translator",
-        websiteLink: "https://www.youtube.com/channel/UC5gGu2UtdhOSz5cenVygnLw"
+        discordID: '318694267621212162',
+        name: 'Dan',
+        info: 'Russian Translator',
+        youtubeLink: 'https://youtube.com/channel/UC5gGu2UtdhOSz5cenVygnLw/'
     },
     {
-        discordID: "267985336011849729",
-        name: "Woohox",
-        info: "Turkish Translator"
+        discordID: '267985336011849729',
+        name: 'Woohox',
+        info: 'Turkish Translator'
     },
     {
-        discordID: "373859854676131841",
-        name: "Dawid",
-        info: "Polish Translator"
+        discordID: '373859854676131841',
+        name: 'Dawid',
+        info: 'Polish Translator'
     },
     {
-        discordID: "231088771196649472",
-        name: "iGerman",
-        info: "Russian Translator",
-        websiteLink: "https://igmn.tk/home/"
+        discordID: '231088771196649472',
+        name: 'iGerman',
+        info: 'Russian Translator',
+        websiteLink: 'https://igmn.tk/home/',
+        youtubeLink: 'https://youtube.com/channel/UCaUHXjG_njW0JJOqYrHFXug/'
     },
     {
-        discordID: "655731264598310932",
-        name: "FatCat1029",
-        info: "Maltese Translator"
+        discordID: '655731264598310932',
+        name: 'FatCat1029',
+        info: 'Maltese Translator'
     },
     {
-        discordID: "710479229497901066",
-        name: "Orore201",
-        info: "Arabic & French Translator"
+        discordID: '710479229497901066',
+        name: 'HydroliCc',
+        info: 'Arabic & French Translator'
     },
     {
-        discordID: "327086785270251521",
-        name: "iHeb",
-        info: "Arabic Translator"
+        discordID: '327086785270251521',
+        name: 'iHeb',
+        info: 'Arabic Translator'
     }
 ];
-
 
 /**
  * Fetches the URL to a user's Discord profile picture
@@ -154,30 +156,26 @@ function addTranslators(members) {
     translatorContainer.innerHTML += members;
 }
 
-
 /**
  * A function that generates an appropiate div with the details of a team member
  * @param {string} avatar 
- * @param {string} name 
- * @param {string} info 
- * @param {string} [githubLink] 
- * @param {string} [websiteLink]
- * @param {string} [instagramLink] 
+ * @param {object} member
  * @returns {string}
  */
-function teamMemberTemplate(avatar, name, info, githubLink, websiteLink, instagramLink) {
+function teamMemberTemplate(avatar, member) {
     let strTemplate = '';
 
-    name == "Mandruyd" ? strTemplate += `<div class="team-member", style="background-image: url('https://cdn.neeko-bot.xyz/owner.gif')">` : strTemplate += `<div class="team-member">`;
+    member.name == 'Mandruyd' ? strTemplate += `<div class='team-member', style='background-image: url("https://cdn.neeko-bot.xyz/owner.gif")'>` : strTemplate += `<div class='team-member'>`;
 
     strTemplate += `
-        <div class="team-member-img"><img src="${avatar}"></div>
-        <div class="team-member-name">${name}</div>
-        ${info ? ((name == "Mandruyd") ? `<div class="team-member-info" style="color: cyan; opacity: 1">${info}</div>` : `<div class="team-member-info">${info}</div>`) : ''}
-        <div class="team-member-social">
-            ${githubLink ? `<button><a href="${githubLink}" target="_blank" rel=”noreferrer noopener”><i class="fab fa-github"></i></a></button>` : ''}
-            ${websiteLink ? `<button><a href="${websiteLink}" target="_blank" rel=”noreferrer noopener”><i class="fas fa-link"></i></a></button>` : ''}
-            ${instagramLink ? `<button><a href="${instagramLink}" target="_blank" rel=”noreferrer noopener”><i class="fab fa-instagram"></i></a></button>` : ''}                    
+        <div class='team-member-img'><img src='${avatar}'></div>
+        <div class='team-member-name'>${member.name}</div>
+        ${member.info ? ((member.name == 'Mandruyd') ? `<div class='team-member-info' style='color: cyan; opacity: 1'>${member.info}</div>` : `<div class='team-member-info'>${member.info}</div>`) : ''}
+        <div class='team-member-social'>
+            ${member.githubLink ? `<button><a href='${member.githubLink}' target='_blank' rel=”noreferrer noopener”><i class='fab fa-github'></i></a></button>` : ''}
+            ${member.websiteLink ? `<button><a href='${member.websiteLink}' target='_blank' rel=”noreferrer noopener”><i class='fas fa-link'></i></a></button>` : ''}
+            ${member.instagramLink ? `<button><a href='${member.instagramLink}' target='_blank' rel=”noreferrer noopener”><i class='fab fa-instagram'></i></a></button>` : ''}      
+            ${member.youtubeLink ? `<button><a href='${member.youtubeLink}' target='_blank' rel=”noreferrer noopener”><i class='fab fa-youtube'></i></a></button>` : ''}                    
         </div>
     </div>
     `;
@@ -185,17 +183,25 @@ function teamMemberTemplate(avatar, name, info, githubLink, websiteLink, instagr
     return strTemplate;
 }
 
+/**
+ * @param {Object} object 
+ * @param {string} id 
+ * @returns {string}
+ */
+function getAvatar(object, id) {
+    if (object && !!object[id]) return object[id];
 
-
+    const numbers = [1, 2, 3, 4];
+    return `https://cdn.discordapp.com/embed/avatars/${numbers[Math.floor(Math.random() * numbers.length)]}.png`
+}
 
 (async () => {
     let createUsers = '';
 
-    const avatars = await fetchPictures(teamMembers.map(member => member.discordID).join(','));
-    const tavatars = await fetchPictures(translatorMembers.map(member => member.discordID).join(','));
+    const avatars = await fetchPictures([...teamMembers, ...translatorMembers].map(member => member.discordID).join(','));
 
     for (let i = 0; i < teamMembers.length; i++) {
-        createUsers += teamMemberTemplate(avatars && avatars[teamMembers[i].discordID] || 'https://cdn.discordapp.com/embed/avatars/4.png', teamMembers[i].name, teamMembers[i].info, teamMembers[i].githubLink, teamMembers[i].websiteLink, teamMembers[i].instagramLink);
+        createUsers += teamMemberTemplate(getAvatar(avatars, teamMembers[i].discordID), teamMembers[i]);
     }
 
     let createTranslators = '';
@@ -203,7 +209,7 @@ function teamMemberTemplate(avatar, name, info, githubLink, websiteLink, instagr
     translatorMembers.sort((a, b) => (a.name > b.name) ? 1 : -1);
 
     for (let i = 0; i < translatorMembers.length; i++) {
-        createTranslators += teamMemberTemplate(tavatars && tavatars[translatorMembers[i].discordID] || 'https://cdn.discordapp.com/embed/avatars/4.png', translatorMembers[i].name, translatorMembers[i].info, translatorMembers[i].githubLink, translatorMembers[i].websiteLink, translatorMembers[i].instagramLink);
+        createTranslators += teamMemberTemplate(getAvatar(avatars, translatorMembers[i].discordID), translatorMembers[i]);
     }
 
     addMembers(createUsers);
