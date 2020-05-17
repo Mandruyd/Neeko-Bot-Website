@@ -108,12 +108,12 @@ const translatorMembers = [
         youtubeLink: 'https://youtube.com/channel/UCaUHXjG_njW0JJOqYrHFXug/'
     },
     {
-        discordID: '655731264598310932',
+        discordID: '388053821248765953',
         name: 'FatCat1029',
         info: 'Maltese Translator'
     },
     {
-        discordID: '710479229497901066',
+        discordID: '518778731171545088',
         name: 'HydroliCc',
         info: 'Arabic & French Translator'
     },
