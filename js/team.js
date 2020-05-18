@@ -93,7 +93,9 @@ const translatorMembers = [
     {
         discordID: '267985336011849729',
         name: 'Woohox',
-        info: 'Turkish Translator'
+        info: 'Turkish Translator',
+        instagramLink: 'https://www.instagram.com/woohox/',
+        youtubeLink: 'https://www.youtube.com/woohox'
     },
     {
         discordID: '373859854676131841',

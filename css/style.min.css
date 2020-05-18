@@ -1043,7 +1043,7 @@ footer .txs a {
 /* animation classes */
 .to-right{
 	animation: left;
-	animation-duration: 1s;
+	animation-duration: 0.5s;
 }
 .to-left{
 	animation: toleft;
