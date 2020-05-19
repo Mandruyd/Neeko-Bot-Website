@@ -1,7 +1,7 @@
 $.getJSON('https://api.neeko-bot.xyz/servers', response => typeText(response.servers)).catch(o_O => typeText());
 
 function typeText(servers = null) {
-    const strings = ["Share your music tastes with your friends.",];
+    const strings = ["Share your music tastes with your friends."];
     if (servers) strings.push(`Neeko is already on ${servers} servers! 🎉`);
     strings.push(...[
         "Transform any song with  unique audio effects.",
