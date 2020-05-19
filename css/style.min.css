@@ -289,8 +289,6 @@ footer .txs a {
 	-ms-flex-item-align: center;
 	-ms-grid-row-align: center;
 	align-self: center;
-	-webkit-transform: translate(10%, 0);
-	transform: translate(10%, 0)
 }
 
 .showcase .container .info h1 {
