@@ -99,6 +99,12 @@ const translatorMembers = [
         youtubeLink: 'https://www.youtube.com/woohox'
     },
     {
+        discordID: '300237913462013962',
+        name: 'Bongo Cat',
+        info: 'Danish Translator',
+        instagramLink: 'https://www.instagram.com/houaricarl'
+    },
+    {
         discordID: '373859854676131841',
         name: 'Dawid',
         info: 'Polish Translator'
