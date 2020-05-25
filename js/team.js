@@ -66,6 +66,7 @@ const translatorMembers = [
         discordID: '241983341757333505',
         name: 'Sam',
         info: 'Dutch Translator',
+        instagramLink: "https://www.instagram.com/samvdb14"
     },
     {
         discordID: '253911407349727232',
