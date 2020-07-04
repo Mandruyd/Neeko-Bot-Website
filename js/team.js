@@ -55,8 +55,9 @@ const teamMembers = [
     {
         discordID: '622511721075965963',
         name: 'Hex',
-        info: 'Support Team / Ideas',
-        githubLink: 'https://github.com/HexHunter34/'
+        info: 'Support Team / Ideas / Language Coordinator / Weeb',
+        githubLink: 'https://github.com/HexHunter34/',
+        youtubeLink: 'https://www.youtube.com/channel/UCKLQpTNe5aTztPWLkFYy-aQ'
     }
 ];
 
@@ -130,6 +131,11 @@ const translatorMembers = [
         discordID: '327086785270251521',
         name: 'iHeb',
         info: 'Arabic Translator'
+    },
+    {
+        discordID: '658268763707277334',
+        name: 'exotwd',
+        info: 'Czech Translator'
     }
 ];
 
