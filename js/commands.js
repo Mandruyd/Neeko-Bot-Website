@@ -13,6 +13,7 @@
 
     const categoriesEl = document.querySelector('#selectCmdsList');
     const listEl = document.querySelector('#list');
+    const bananaEl = document.querySelector('#banana');
     const searchCmd = document.querySelector('.x-cmds-search');
 
     const cmdsArray = [];
@@ -90,6 +91,15 @@
             cmdsArray.forEach(cmd => {
                 if (!cmd.children[0].innerText.toLowerCase().includes(e.target.value.toLowerCase())) cmd.hidden = true;
                 else cmd.hidden = false;
+
+
+                if (Array.from(listEl.children).every(el => el.hidden)) {
+                    if (Math.random() < 0.001) {
+                        bananaEl.hidden = false;
+                    }
+                } else {
+                    bananaEl.hidden = true;
+                }
             })
         }
     })
