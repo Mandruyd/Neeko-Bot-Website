@@ -136,6 +136,11 @@ const translatorMembers = [
         discordID: '658268763707277334',
         name: 'exotwd',
         info: 'Czech Translator'
+    },
+    {
+        discordID: '674221428127563797',
+        name: 'NDQ1049',
+        info: 'Vietnamese & Japanese Translator'
     }
 ];
 
