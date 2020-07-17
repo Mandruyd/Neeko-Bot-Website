@@ -140,7 +140,9 @@ const translatorMembers = [
     {
         discordID: '674221428127563797',
         name: 'NDQ1049',
-        info: 'Vietnamese & Japanese Translator'
+        info: 'Vietnamese & Japanese Translator',
+        instagramLink: "https://www.instagram.com/ngdq1049/"
+
     }
 ];
 
