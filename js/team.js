@@ -64,7 +64,7 @@ const teamMembers = [
 
 const translatorMembers = [
     {
-        discordID: '241983341757333505',
+        discordID: '725680860371746877',
         name: 'Sam',
         info: 'Dutch Translator',
         instagramLink: "https://www.instagram.com/samvdb15"
@@ -142,6 +142,13 @@ const translatorMembers = [
         name: 'NDQ1049',
         info: 'Vietnamese & Japanese Translator',
         instagramLink: "https://www.instagram.com/ndq1049/"
+
+    },
+    {
+        discordID: '362072547723837441',
+        name: 'Mario 64',
+        info: 'Spanish Translator',
+        websiteLink: "https://crowdin.com/profile/MarioAR"
 
     }
 ];
