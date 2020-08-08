@@ -39,13 +39,13 @@ a:hover {
 footer {
 	position: relative;
 	bottom: 0;
-	width: auto;
+	width: 100%;
 	background-color: #24252a
 }
 
 footer .txs {
+	padding: 30px 10px 5px 10px;
 	font-size: 14px;
-	margin-top: -5px;
 	color: #f0f0f0;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -61,11 +61,6 @@ footer .txs {
 
 footer .txs a {
 	color: #7a70c0
-}
-
-.sponsor {
-	width: 95%;
-	margin: auto;
 }
 
 
