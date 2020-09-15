@@ -57,7 +57,8 @@ const teamMembers = [
         name: 'Hex',
         info: 'Support Team / Ideas / Language Coordinator / Weeb',
         githubLink: 'https://github.com/HexHunter34/',
-        youtubeLink: 'https://www.youtube.com/channel/UCKLQpTNe5aTztPWLkFYy-aQ'
+        youtubeLink: 'https://www.youtube.com/channel/UCKLQpTNe5aTztPWLkFYy-aQ',
+        websiteLink: 'http://www.hex33.xyz/'
     }
 ];
 
