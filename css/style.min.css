@@ -482,7 +482,7 @@ footer .txs a {
 .active .long-desc {
 	display: block;
 }
-p{
+.cmd-info, .cmd-title{
 	display: inline;
 }
 .popup:hover::before{
