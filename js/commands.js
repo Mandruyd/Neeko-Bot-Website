@@ -70,7 +70,18 @@
             collapsible.classList.toggle('active');
         })
     })
-
+    // categoriesEl.addEventListener('change', (e) => {
+    //     if (e.target.value == "all") {
+    //         cmdsArray.forEach(cmd => {
+    //             cmd.hidden = false;
+    //         })
+    //     } else {
+    //         cmdsArray.forEach(cmd => {
+    //             if (!cmd.classList.contains(e.target.children[e.target.selectedIndex].id)) cmd.hidden = true;
+    //             else cmd.hidden = false;
+    //         })
+    //     }
+    // })
     for(let i=0;i<categoriesEl.children.length;i++){
         categoriesEl.children[i].addEventListener('click',(e)=>{
             if (e.target.innerText == "All") {
