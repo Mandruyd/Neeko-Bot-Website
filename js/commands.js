@@ -13,7 +13,6 @@
 
     const categoriesEl = document.querySelector('#selectCmdsList');
     const listEl = document.querySelector('#list');
-    const bananaEl = document.querySelector('#banana');
     const searchCmd = document.querySelector('.x-cmds-search');
 
     const cmdsArray = [];
@@ -27,7 +26,7 @@
     }
 
     function addCategory(name) {
-        const btn = document.createElement('option');
+        const btn = document.createElement('a');
         btn.id = name;
         btn.innerText = name;
 
@@ -43,7 +42,7 @@
         titleEl.classList.add('cmd-title');
         titleEl.setAttribute("alias", (alias.length > 1) ? alias.join(", ") : "");
         (alias.length > 1) ? titleEl.classList.add("popup") : "";
-        titleEl.innerText = name;
+        titleEl.innerText = `!${name} - `;
 
         const infoEl = document.createElement('p');
         infoEl.classList.add('cmd-info');
@@ -72,18 +71,20 @@
         })
     })
 
-    categoriesEl.addEventListener('change', (e) => {
-        if (e.target.value == "all") {
-            cmdsArray.forEach(cmd => {
-                cmd.hidden = false;
-            })
-        } else {
-            cmdsArray.forEach(cmd => {
-                if (!cmd.classList.contains(e.target.children[e.target.selectedIndex].id)) cmd.hidden = true;
-                else cmd.hidden = false;
-            })
-        }
-    })
+    for(let i=0;i<categoriesEl.children.length;i++){
+        categoriesEl.children[i].addEventListener('click',(e)=>{
+            if (e.target.innerText == "All") {
+                cmdsArray.forEach(cmd => {
+                    cmd.hidden = false;
+                })
+            } else {
+                cmdsArray.forEach(cmd => {
+                    if (!cmd.classList.contains(e.target.id)) cmd.hidden = true;
+                    else cmd.hidden = false;
+                })
+            }
+        })
+    }
 
     searchCmd.addEventListener('keyup', (e) => {
         if (e.target.value == " ") cmd.hidden = false;
@@ -92,14 +93,6 @@
                 if (!cmd.children[0].innerText.toLowerCase().includes(e.target.value.toLowerCase())) cmd.hidden = true;
                 else cmd.hidden = false;
 
-
-                if (Array.from(listEl.children).every(el => el.hidden)) {
-                    if (Math.random() < 0.001) {
-                        bananaEl.hidden = false;
-                    }
-                } else {
-                    bananaEl.hidden = true;
-                }
             })
         }
     })
