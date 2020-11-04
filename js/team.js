@@ -20,9 +20,9 @@ const teamMembers = [
         youtubeLink: 'https://youtube.com/raplayerofficial/'
     },
     {
-        discordID: '519772560875978752',
+        discordID: '768148280403689563',
         name: 'Laurentiu',
-        info: 'On my way to make the www better.',
+        info: 'Website Code / Dev',
         githubLink: 'https://github.com/laurentiu0/',
         websiteLink: 'https://laurentiu.live/',
     },
