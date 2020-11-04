@@ -70,6 +70,7 @@ const translatorMembers = [
         info: 'Dutch Translator',
         instagramLink: "https://www.instagram.com/samvdb15"
     },
+    
     {
         discordID: '253911407349727232',
         name: 'Leandro',
