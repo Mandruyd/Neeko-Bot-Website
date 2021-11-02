@@ -27,6 +27,13 @@ const teamMembers = [
         websiteLink: 'https://laurentiu.live/',
     },
     {
+        discordID: '622511721075965963',
+        name: 'Hex',
+        info: 'Community Manager / Support Team / Ideas / Language Coordinator / Weeb',
+        githubLink: 'https://github.com/HexHunter34/',
+        youtubeLink: 'https://www.youtube.com/channel/UCKLQpTNe5aTztPWLkFYy-aQ'
+    },
+    {
         discordID: '139793690712473600',
         name: 'Seb',
         info: 'Support Team / Ideas',
@@ -51,14 +58,6 @@ const teamMembers = [
         name: 'Armanalex',
         info: 'Support Team™️ / Ideas',
         instagramLink: 'https://www.instagram.com/armanalexx/'
-    },
-    {
-        discordID: '622511721075965963',
-        name: 'Hex',
-        info: 'Support Team / Ideas / Language Coordinator / Weeb',
-        githubLink: 'https://github.com/HexHunter34/',
-        youtubeLink: 'https://www.youtube.com/channel/UCKLQpTNe5aTztPWLkFYy-aQ',
-        websiteLink: 'http://www.hex33.xyz/'
     }
 ];
 
